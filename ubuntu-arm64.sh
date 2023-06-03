@@ -6,10 +6,16 @@ mkdir ~/InitialProvision
 pushd .
 cd ~/InitialProvision
 
+# Set Git's user and email attributes so that code can be checked in if needed
+#
+git config --global user.name stan
+git config --global user.email stan@myman99
+
 # Install the app frameworks. We'll use flatpak as our preferred installer.
 #
 sudo apt install snapd -y
 sudo apt install flatpak
+sudo apt install gnome-software-plugin-flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Install the common apps using the best app framework the app supports
