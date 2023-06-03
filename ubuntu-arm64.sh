@@ -47,7 +47,7 @@ sudo apt install g++ libfuse-dev pkg-config yasm libwxbase3.0-dev
 wget --content-disposition https://github.com/veracrypt/VeraCrypt/archive/refs/tags/VeraCrypt_1.25.9.tar.gz
 tar -xvf VeraCrypt-VeraCrypt_1.25.9.tar.gz
 pushd .
-cd cd VeraCrypt-VeraCrypt_1.25.9/src
+cd VeraCrypt-VeraCrypt_1.25.9/src
 make NOGUI=1
 sudo cp Main/veracrypt /usr/bin
 popd
