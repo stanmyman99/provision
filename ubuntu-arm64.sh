@@ -2,12 +2,6 @@
 
 pushd .
 
-# Move into an installation directory
-#
-pushd .
-mkdir ~/Temp
-cd ~/Temp
-
 # Install Git and set Git's user and email attributes so that code can be checked in if needed
 #
 pushd .
@@ -20,11 +14,6 @@ cd Code
 git clone https://github.com/stanmyman99/aliases
 cp aliases/.bash_aliases ~
 popd
-
-# Next DNS - this is an interactive script so it goes first
-#
-# sh -c "$(curl -sL https://nextdns.io/install)"
-# nextdns start
 
 # Install the app frameworks. We'll use flatpak as our preferred installer.
 #
@@ -67,7 +56,7 @@ make NOGUI=1
 sudo cp Main/veracrypt /usr/bin
 popd
 
-# Setup the encrypted folder in Documents
+# Setup an encrypted container in Documents
 #
 pushd .
 veracrypt -t -c ~/Documents/Encrypted.vc
@@ -93,5 +82,10 @@ gsettings set org.gnome.desktop.privacy old-files-age 1
 gsettings set org.gnome.desktop.notifications show-banners false
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 sudo service bluetooth stop
+
+# Next DNS - this is an interactive script so it goes first
+#
+# sh -c "$(curl -sL https://nextdns.io/install)"
+# nextdns start
 
 popd
